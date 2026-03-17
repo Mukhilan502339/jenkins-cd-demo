@@ -11,13 +11,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'mvnw.cmd clean package'
+                bat 'mvn clean package'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'mvnw.cmd test'
+                bat 'mvn test'
             }
         }
 
