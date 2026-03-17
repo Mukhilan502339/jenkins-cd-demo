@@ -21,9 +21,12 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Deploy (Local Cloud)') {
             steps {
-                echo 'Application deployed successfully (simulation)'
+                bat '''
+                taskkill /F /IM java.exe || exit 0
+                start cmd /c "java -jar target\\*.jar"
+                '''
             }
         }
     }
